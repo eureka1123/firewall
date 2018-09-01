@@ -32,7 +32,7 @@ class Firewall:
 					ip_end = ip[1].split(".")
 					#checks if each of the octets in the desired ip address is within range of the 
 					#corresponding octets of ip_start and ip_end 
-					if all([True if ip_start[i]<=ip_orig[i]<=ip_end[i] else False for i in range(4)]):
+					if all([True if int(ip_start[i])<=int(ip_orig[i])<=int(ip_end[i]) else False for i in range(4)]):
 						return True
 		return False
 
